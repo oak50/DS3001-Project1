@@ -1,6 +1,6 @@
 # DS3001-Project1
 
-## List of Key Variables in "Movies.csv"
+## List of Key Variables in "movie_dataset.csv"
 
 ### Variable Name: "Title"
 #### Description: Title of Film
