@@ -10,6 +10,10 @@ import seaborn as sns
 # load dataset into dataframe
 df = pd.read_csv('Data/movie_dataset.csv',low_memory=False)
 
+print("Shape: \n", df.shape,'\n') 
+# Number of rows: 4803
+# Number of Columns: 24
+
 # Look at first few rows
 df_head = df.head()
 print(df_head)
