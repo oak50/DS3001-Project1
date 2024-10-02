@@ -79,7 +79,7 @@ plt.title('Scatter Plot of Movie Rating vs. Runtime')
 plt.grid(True)
 plt.show()
 plt.savefig( "EDA_plots/movie_runtime_vs_rating_scatter.png" )
-# scatterplot appears nonlinear, minimal correlation between runtime and user rating. Let's run a correlation:
+# scatterplot appears nonlinear, minimal correlation between runtime and user rating. Let's run a correlation test:
 
 runtime_rating_correlation = df['runtime'].corr(df['vote_average'])
 print(f"Correlation between Movie Runtime and User Rating: {runtime_rating_correlation:.2f}")
