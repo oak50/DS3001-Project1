@@ -51,13 +51,35 @@ plt.savefig( "movies_per_director_histogram.png" )
 print( '\n' )
 
 
-# RUNTIME
+# MOVIE RUNTIME IN MINUTES
 
 # Descriptive statistics for runtime:
 runtime_table = df[ "runtime" ].describe()
 print( "Descriptive statistics for movie runtime: \n", runtime_table )
 
+# Histogram for runtime:
+plt.figure(figsize=(10, 6))
+plt.hist(df['runtime'], bins=50, color='skyblue', edgecolor='black')
+plt.xlabel('Movie Runtime (minutes)')
+plt.ylabel('Number of Movies')
+plt.title('Distribution of Movie Runtimes')
+plt.show()
+plt.savefig( "movie_runtime_histogram.png" )
 
+# Scatterplot for runtime vs. average rating:
+plt.figure(figsize=(10, 6))
+plt.scatter(df['runtime'], df['vote_average'], color='skyblue', edgecolor='black')
+plt.xlabel('Movie Runtime (minutes)')
+plt.ylabel('Average rating by Users')
+plt.title('Scatter Plot of Movie Rating vs. Runtime')
+plt.grid(True)
+plt.show()
+plt.savefig( "movie_runtime_vs_rating_scatter.png" )
+# scatterplot appears nonlinear, minimal correlation between runtime and user rating. Let's run a correlation:
+
+runtime_rating_correlation = df['runtime'].corr(df['vote_average'])
+print(f"Correlation between Movie Runtime and User Rating: {runtime_rating_correlation:.2f}")
+# movie rating and runtime have a positive correlation of 0.38
 
 
 
