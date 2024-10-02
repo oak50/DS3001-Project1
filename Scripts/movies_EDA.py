@@ -8,7 +8,7 @@ import seaborn as sns
 
 
 # load dataset into dataframe
-df = pd.read_csv('movie_dataset.csv',low_memory=False)
+df = pd.read_csv('Data/movie_dataset.csv',low_memory=False)
 
 # Look at first few rows
 df_head = df.head()
@@ -47,7 +47,7 @@ plt.ylabel('Number of Directors (Director Count)')
 plt.title('Distribution of Movies Directed Per Director')
 plt.xticks(range(0, 28))
 plt.show()
-plt.savefig( "movies_per_director_histogram.png" )
+plt.savefig( "EDA_plots/movies_per_director_histogram.png" )
 print( '\n' )
 
 
@@ -64,7 +64,7 @@ plt.xlabel('Movie Runtime (minutes)')
 plt.ylabel('Number of Movies')
 plt.title('Distribution of Movie Runtimes')
 plt.show()
-plt.savefig( "movie_runtime_histogram.png" )
+plt.savefig( "EDA_plots/movie_runtime_histogram.png" )
 
 # Scatterplot for runtime vs. average rating:
 plt.figure(figsize=(10, 6))
@@ -74,7 +74,7 @@ plt.ylabel('Average rating by Users')
 plt.title('Scatter Plot of Movie Rating vs. Runtime')
 plt.grid(True)
 plt.show()
-plt.savefig( "movie_runtime_vs_rating_scatter.png" )
+plt.savefig( "EDA_plots/movie_runtime_vs_rating_scatter.png" )
 # scatterplot appears nonlinear, minimal correlation between runtime and user rating. Let's run a correlation:
 
 runtime_rating_correlation = df['runtime'].corr(df['vote_average'])
